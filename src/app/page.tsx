@@ -1,5 +1,4 @@
 "use client"
-
 import React from 'react';
 import Image from 'next/image';
 import Slider from "react-slick";
@@ -7,6 +6,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Button} from "@/components/ui/button";
 import Services from '@/components/features/blocks/Services';
+import {ChevronLeft, ChevronRight} from 'lucide-react';
+
+const CustomArrow = ({className, style, onClick, children}) => (
+	<div
+		className={`${className} !w-5 !h-5 !bg-white/20 hover:!bg-white/40 !rounded-full !flex !items-center !justify-center !z-10 before:content-none transition-all duration-200 backdrop-blur-[2px]`}
+		style={{...style, display: 'flex'}}
+		onClick={onClick}
+	>
+		{children}
+	</div>
+);
 
 const images = [
 	"/images/home/slide1.jpg",
@@ -23,6 +33,20 @@ export default function HomeContent() {
 		slidesToScroll: 1,
 		autoplay: true,
 		autoplaySpeed: 5000,
+		nextArrow: (
+			<CustomArrow>
+				<ChevronRight className="w-3 h-3 text-gray-800"/>
+			</CustomArrow>
+		),
+		prevArrow: (
+			<CustomArrow>
+				<ChevronLeft className="w-3 h-3 text-gray-800"/>
+			</CustomArrow>
+		),
+		dotsClass: "slick-dots !bottom-2",
+		customPaging: () => (
+			<div className="w-1 h-1 rounded-full bg-white/30 hover:bg-white/50 transition-colors duration-200"/>
+		),
 	};
 
 	return (
@@ -46,18 +70,19 @@ export default function HomeContent() {
 							</Button>
 						</div>
 					</div>
-					<div className="lg:w-1/2 w-full">
+					<div className="lg:w-1/2 w-full relative group">
 						<Slider {...settings}>
 							{images.map((src, index) => (
 								<div key={index} className="outline-none">
-									<Image
-										src={src}
-										alt={`Slide ${index + 1}`}
-										width={600}
-										height={400}
-										objectFit="cover"
-										className="rounded-lg w-full"
-									/>
+									<div className="relative aspect-[3/2] w-full">
+										<Image
+											src={src}
+											alt={`Slide ${index + 1}`}
+											fill
+											priority={index === 0}
+											className="rounded-lg object-cover"
+										/>
+									</div>
 								</div>
 							))}
 						</Slider>
@@ -66,7 +91,7 @@ export default function HomeContent() {
 
 				<div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
 					{['Innovation', 'Expertise', 'Résultats'].map((item, index) => (
-						<div key={index} className="p-6 bg-card border rounded-lg shadow">
+						<div key={index} className="p-6 bg-card border rounded-lg shadow hover:shadow-lg transition-shadow">
 							<h3 className="text-xl font-semibold mb-2 text-card-foreground">{item}</h3>
 							<p className="text-muted-foreground">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
@@ -78,5 +103,5 @@ export default function HomeContent() {
 				<Services/>
 			</div>
 		</div>
-	)
+	);
 }
