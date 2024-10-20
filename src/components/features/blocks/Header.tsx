@@ -22,7 +22,7 @@ export default function Header() {
 	const closeDrawer = () => setIsDrawerOpen(false);
 
 	return (
-		<header className="sticky top-0 z-50 w-full bg-white dark:bg-black shadow-sm">
+		<header className="sticky top-0 z-50 w-full border-b bg-white dark:bg-black shadow-sm">
 			<div className="container mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-20">
 					<div className="flex-shrink-0">

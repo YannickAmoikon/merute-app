@@ -6,11 +6,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Button} from "@/components/ui/button";
+import Services from '@/components/features/blocks/Services';
 
 const images = [
-	"/images/logo/logo.png",
-	"/images/logo/logo.png",
-	"/images/logo/logo.png",
+	"/images/home/slide1.jpg",
+	"/images/home/slide2.jpg",
+	"/images/home/slide3.jpg",
 ];
 
 export default function HomeContent() {
@@ -55,7 +56,7 @@ export default function HomeContent() {
 										width={600}
 										height={400}
 										objectFit="cover"
-										className="rounded-lg"
+										className="rounded-lg w-full"
 									/>
 								</div>
 							))}
@@ -63,7 +64,7 @@ export default function HomeContent() {
 					</div>
 				</div>
 
-				<div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+				<div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
 					{['Innovation', 'Expertise', 'Résultats'].map((item, index) => (
 						<div key={index} className="p-6 bg-card rounded-lg shadow">
 							<h3 className="text-xl font-semibold mb-2 text-card-foreground">{item}</h3>
@@ -74,6 +75,7 @@ export default function HomeContent() {
 						</div>
 					))}
 				</div>
+				<Services/>
 			</div>
 		</div>
 	)
