@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import React from "react";
 import ThemeProvider from "@/components/themes/theme-provider"
 import Header from "@/components/features/blocks/Header";
+import Footer from "@/components/features/blocks/Footer";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default function RootLayout({
     >
       <Header/>
       {children}
+      <Footer/>
     </ThemeProvider>
     </body>
     </html>

@@ -31,7 +31,7 @@ export default function HomeContent() {
 				<div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 					<div className="lg:w-1/2 space-y-6">
 						<h1 className="text-4xl font-bold text-foreground">
-							Bienvenue chez MERUTE DIGITAL ORBITAL
+							Bienvenue chez <br/> MERUTE DIGITAL ORBITAL
 						</h1>
 						<p className="text-lg text-muted-foreground">
 							Nous sommes spécialisés dans la création de solutions digitales innovantes pour propulser votre entreprise
@@ -66,7 +66,7 @@ export default function HomeContent() {
 
 				<div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
 					{['Innovation', 'Expertise', 'Résultats'].map((item, index) => (
-						<div key={index} className="p-6 bg-card rounded-lg shadow">
+						<div key={index} className="p-6 bg-card border rounded-lg shadow">
 							<h3 className="text-xl font-semibold mb-2 text-card-foreground">{item}</h3>
 							<p className="text-muted-foreground">
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
