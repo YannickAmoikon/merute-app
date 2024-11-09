@@ -63,9 +63,9 @@ export default function Testimonials() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl font-bold text-foreground mb-2">
-            Nos Chiffres Clés
+            Nos Statistiques
           </h2>
-          <div className="w-48 h-1 bg-primary mb-4 rounded-full"></div>
+          <div className="w-60 h-1 bg-primary mb-4 rounded-full"></div>
           <p className="lg:w-2/3 text-muted-foreground text-lg">
             Des résultats concrets qui témoignent de notre engagement envers l'excellence.
           </p>

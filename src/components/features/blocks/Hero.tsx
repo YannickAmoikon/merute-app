@@ -1,14 +1,6 @@
 import { Button } from "@/components/ui/button";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import Slider from "react-slick";
 import { motion } from "framer-motion";
-
-const images = [
-	"/images/home/slide1.jpg",
-	"/images/home/slide2.jpg",
-	"/images/home/slide3.jpg",
-];
 
 const heroVariants = {
 	hidden: { opacity: 0, y: 20 },
@@ -22,7 +14,7 @@ const heroVariants = {
 	}
 };
 
-const imageVariants = {
+const videoVariants = {
 	hidden: { opacity: 0, scale: 0.8 },
 	visible: {
 		opacity: 1,
@@ -35,30 +27,16 @@ const imageVariants = {
 };
 
 export default function Hero() {
-	const [imageLoaded, setImageLoaded] = useState(false);
 	const [isMounted, setIsMounted] = useState(false);
 
 	useEffect(() => {
 		setIsMounted(true);
 	}, []);
 
-	const settings = {
-		dots: true,
-		infinite: true,
-		speed: 500,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		autoplay: true,
-		autoplaySpeed: 5000,
-		dotsClass: "slick-dots !bottom-4",
-		customPaging: () => (
-			<div className="w-2 h-2 rounded-full bg-white/30 hover:bg-white/50 transition-colors duration-200" />
-		),
-	};
-
 	if (!isMounted) {
 		return null;
 	}
+
 	return (
 		<div className="flex flex-col lg:flex-row items-center justify-between gap-12">
 			<motion.div 
@@ -81,31 +59,22 @@ export default function Hero() {
 					<Button variant="outline">Contactez-nous</Button>
 				</div>
 			</motion.div>
+
 			<motion.div 
 				className="lg:w-1/2 w-full relative group"
-				variants={imageVariants}
+				variants={videoVariants}
 				initial="hidden"
 				animate="visible"
 			>
-				<div className="aspect-[3/2] w-full bg-gray-200 rounded-lg overflow-hidden">
-					<Slider {...settings}>
-						{images.map((src, index) => (
-							<div key={index} className="outline-none">
-								<div className="relative aspect-[3/2] w-full">
-									<Image
-										src={src}
-										alt={`Slide ${index + 1}`}
-										fill
-										priority={index === 0}
-										className={`rounded-lg object-cover transition-opacity duration-300 ${
-											imageLoaded ? "opacity-100" : "opacity-0"
-										}`}
-										onLoad={() => setImageLoaded(true)}
-									/>
-								</div>
-							</div>
-						))}
-					</Slider>
+				<div className="aspect-[16/9] w-full rounded-lg overflow-hidden bg-muted relative">
+					<iframe
+						className="absolute inset-0 w-full h-full rounded-lg"
+						src="https://www.youtube.com/embed/f02mOEt11OQ?autoplay=1&mute=1&controls=0&loop=1&playlist=f02mOEt11OQ&showinfo=0&rel=0&modestbranding=1"
+						title="Technology Background Video"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+						allowFullScreen
+					/>
+					<div className="absolute inset-0 bg-background/10 pointer-events-none" />
 				</div>
 			</motion.div>
 		</div>
