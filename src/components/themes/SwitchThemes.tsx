@@ -8,9 +8,18 @@ import {Button} from "@/components/ui/button"
 
 export default function ModeToggle() {
 	const {setTheme, theme} = useTheme()
+	const [isMounted, setIsMounted] = React.useState(false)
+
+	React.useEffect(() => {
+		setIsMounted(true)
+	}, [])
 
 	const toggleTheme = () => {
 		setTheme(theme === "dark" ? "light" : "dark")
+	}
+
+	if (!isMounted) {
+		return null // ou un indicateur de chargement
 	}
 
 	return (
@@ -24,7 +33,7 @@ export default function ModeToggle() {
 			) : (
 				<SunMoon size={20} className="mr-2"/>
 			)}
-			<span>Thème</span>
+			<span className="font-semibold">Thème</span>
 		</Button>
 	)
 }

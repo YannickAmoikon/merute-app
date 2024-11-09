@@ -28,11 +28,11 @@ export default function Header() {
 					<div className="flex-shrink-0">
 						<Link href="/">
 							<Image
-								className="h-16 w-auto dark:invert sm:h-20"
+								className="h-20 w-auto dark:invert sm:h-20"
 								src="/images/logo/logo.png"
 								alt="MERUTE DIGITAL ORBITAL"
-								width={200}
-								height={50}
+								width={250}
+								height={60}
 								priority
 							/>
 						</Link>
@@ -47,7 +47,7 @@ export default function Header() {
 									pathname === item.href && "bg-accent text-accent-foreground"
 								)}
 							>
-								<Link href={item.href} className="flex items-center">
+								<Link href={item.href} className="flex font-semibold items-center">
 									<item.icon size={20} className="mr-2"/>
 									<span>{item.label}</span>
 								</Link>

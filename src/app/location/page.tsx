@@ -18,11 +18,7 @@ export default function Location() {
 						<iframe
 							width="100%"
 							height="100%"
-							frameborder="0"
-							marginheight="0"
-							marginwidth="0"
 							title="map"
-							scrolling="no"
 							src="https://maps.google.com/maps?width=100%&height=600&hl=fr&q=Abidjan,Côte+d'Ivoire&ie=UTF8&t=&z=14&iwloc=B&output=embed"
 						/>
 					</div>
@@ -42,6 +38,7 @@ export default function Location() {
 									id="email"
 									name="email"
 									className="w-full bg-background"
+									placeholder="Entrer votre adresse email"
 								/>
 							</div>
 							<div className="relative mb-4">
@@ -51,6 +48,7 @@ export default function Location() {
 								<Textarea
 									id="message"
 									name="message"
+									placeholder="Décrivez vos besoins ici..."
 									className="w-full bg-background rounded-md border min-h-[120px] px-3 py-2 text-card-foreground"
 								/>
 							</div>
