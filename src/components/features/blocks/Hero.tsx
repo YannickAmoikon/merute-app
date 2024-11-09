@@ -38,7 +38,7 @@ export default function Hero() {
 	}
 
 	return (
-		<div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+		<div className="flex flex-col lg:flex-row items-center my-12 justify-between gap-12">
 			<motion.div 
 				className="lg:w-1/2 space-y-6"
 				variants={heroVariants}
