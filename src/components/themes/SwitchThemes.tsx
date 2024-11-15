@@ -1,39 +1,21 @@
 "use client"
 
-import * as React from "react"
-import {SunIcon, SunMoon} from "lucide-react"
-import {useTheme} from "next-themes"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
 
-import {Button} from "@/components/ui/button"
-
-export default function ModeToggle() {
-	const {setTheme, theme} = useTheme()
-	const [isMounted, setIsMounted] = React.useState(false)
-
-	React.useEffect(() => {
-		setIsMounted(true)
-	}, [])
-
-	const toggleTheme = () => {
-		setTheme(theme === "dark" ? "light" : "dark")
-	}
-
-	if (!isMounted) {
-		return null // ou un indicateur de chargement
-	}
+export default function SwitchThemes() {
+	const { theme, setTheme } = useTheme()
 
 	return (
-		<Button
-			onClick={toggleTheme}
-			variant="ghost"
-			className="flex items-center"
-		>
-			{theme === "dark" ? (
-				<SunIcon size={20} className="mr-2"/>
-			) : (
-				<SunMoon size={20} className="mr-2"/>
-			)}
-			<span className="font-semibold">Thème</span>
-		</Button>
+		<div className="relative group px-3 py-2">
+			<button
+				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+				className="flex items-center font-semibold text-foreground/60 hover:text-foreground/80 transition-colors"
+			>
+				<Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+				<Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+			</button>
+			<span className="absolute bottom-0 left-0 w-full h-0.5 bg-foreground scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+		</div>
 	)
 }

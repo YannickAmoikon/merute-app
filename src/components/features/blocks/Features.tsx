@@ -10,7 +10,7 @@ const cardVariants = {
 		}
 	},
 	hover: {
-		scale: 1.03,
+		scale: 1.02,
 		transition: {
 			duration: 0.2
 		}
@@ -26,7 +26,7 @@ const features = [
 	{
 		title: "Expertise",
 		description:
-			"Une équipe expérimentée en développement web, marketing digital, etc... pour concrétiser vos projets.",
+			"Une équipe expérimentée en développement mobile, web, marketing digital, etc... pour concrétiser vos projets.",
 	},
 	{
 		title: "Résultats",
@@ -37,7 +37,7 @@ const features = [
 
 export default function Features() {
 	return (
-		<div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 my-12">
+		<div className="mt-16 grid bg-secondary dark:bg-black grid-cols-1 md:grid-cols-3 gap-8 my-12">
 			{features.map((feature, index) => (
 				<motion.div
 					key={index}
@@ -46,12 +46,12 @@ export default function Features() {
 					whileInView="visible"
 					whileHover="hover"
 					viewport={{ once: true }}
-					className="p-6 bg-card border rounded-lg shadow"
+					className="group relative p-6 bg-secondary dark:bg-black cursor-pointer shadow-sm border-2 border-border/50 rounded-md transition-all duration-300 hover:border-primary/50"
 				>
-					<h3 className="text-xl font-semibold mb-2 text-card-foreground">
+					<h3 className="text-xl font-semibold mb-2 text-foreground">
 						{feature.title}
 					</h3>
-					<p className="text-muted-foreground">
+					<p className="text-muted-foreground leading-relaxed">
 						{feature.description}
 					</p>
 				</motion.div>
