@@ -202,7 +202,7 @@ export default function Achievements() {
 									src={project.image || DEFAULT_IMAGE}
 									alt={project.title}
 									fill
-									className="object-cover opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+									className="object-cover opacity-10 group-hover:opacity-30 transition-opacity duration-300"
 								/>
 							</div>
 

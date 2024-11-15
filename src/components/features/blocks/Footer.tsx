@@ -1,86 +1,144 @@
 import React from 'react';
-import {Facebook, Twitter, Instagram, Linkedin} from 'lucide-react';
+import {Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Check} from 'lucide-react';
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
+import Link from "next/link";
 
 export default function Footer() {
 	return (
-		<footer className="bg-secondary dark:bg-black text-foreground">
+		<footer className="bg-secondary dark:bg-black text-foreground relative">
 			<div className="container mx-auto px-5 py-12">
 				<div className="flex flex-wrap md:text-left text-center order-first">
-					<div className="lg:w-1/4 md:w-1/2 w-full px-4">
-						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-3">SERVICES</h2>
-						<nav className="list-none mb-10">
-							<li><a className="text-muted-foreground hover:text-primary">Développement Web</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Consultation</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Marketing Digital</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Développement Mobile</a></li>
-						</nav>
-					</div>
-					<div className="lg:w-1/4 md:w-1/2 w-full px-4">
-						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-3">À PROPOS</h2>
-						<nav className="list-none mb-10">
-							<li><a className="text-muted-foreground hover:text-primary">Notre Équipe</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Nos Valeurs</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Carrières</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Contactez-nous</a></li>
-						</nav>
-					</div>
-					<div className="lg:w-1/4 md:w-1/2 w-full px-4">
-						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-3">RESSOURCES</h2>
-						<nav className="list-none mb-10">
-							<li><a className="text-muted-foreground hover:text-primary">Blog</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Études de Cas</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">FAQ</a></li>
-							<li><a className="text-muted-foreground hover:text-primary">Support</a></li>
-						</nav>
-					</div>
-					<div className="lg:w-1/4 md:w-1/2 w-full px-4">
-						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-3">NEWSLETTER</h2>
-						<div className="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
-							<div className="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
-								<Input
-									type="email"
-									id="footer-field"
-									placeholder="Votre adresse email"
-									className="w-full bg-opacity-50 rounded-sm border focus:bg-transparent shadow-sm focus:ring focus:ring-primary focus:border-primary text-base outline-none py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-								/>
-							</div>
-							<Button className="lg:mt-2 xl:mt-0 rounded-sm flex-shrink-0">{"S'abonner"}</Button>
+					<div className="lg:w-1/2 md:w-1/2 w-full px-4">
+						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-6">NOS SERVICES</h2>
+						<div className="grid grid-cols-2 gap-x-8">
+							<nav className="list-none mb-10">
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/web" className="text-muted-foreground hover:text-primary">Solutions Web</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/conseil" className="text-muted-foreground hover:text-primary">Conseil Digital</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/marketing" className="text-muted-foreground hover:text-primary">Marketing Digital</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/support" className="text-muted-foreground hover:text-primary">Support 24/7</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/formation" className="text-muted-foreground hover:text-primary">Formation</Link>
+								</li>
+							</nav>
+							<nav className="list-none mb-10">
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/mobile" className="text-muted-foreground hover:text-primary">Apps Mobiles</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/cloud" className="text-muted-foreground hover:text-primary">Cloud & DevOps</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/securite" className="text-muted-foreground hover:text-primary">Cybersécurité</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/data" className="text-muted-foreground hover:text-primary">Data Analysis</Link>
+								</li>
+								<li className="flex items-center space-x-2 mb-4">
+									<Check size={16} className="text-primary" />
+									<Link href="/services/ia" className="text-muted-foreground hover:text-primary">IA & Automatisation</Link>
+								</li>
+							</nav>
 						</div>
-						<p className="text-muted-foreground text-sm mt-2 md:text-left text-center">
-							Restez informé de nos dernières actualités et offres.
-						</p>
+					</div>
+
+					<div className="lg:w-1/4 md:w-1/2 w-full px-4">
+						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-6">CONTACT</h2>
+						<nav className="list-none mb-10 space-y-4">
+							<li>
+								<a className="text-muted-foreground hover:text-primary flex items-center space-x-3">
+									<MapPin size={16} className="flex-shrink-0"/>
+									<span>Abidjan, Côte d'Ivoire</span>
+								</a>
+							</li>
+							<li>
+								<a className="text-muted-foreground hover:text-primary flex items-center space-x-3">
+									<Phone size={16} className="flex-shrink-0"/>
+									<span>+225 07 0707 0707</span>
+								</a>
+							</li>
+							<li>
+								<a className="text-muted-foreground hover:text-primary flex items-center space-x-3">
+									<Mail size={16} className="flex-shrink-0"/>
+									<span>contact@merute.digital</span>
+								</a>
+							</li>
+						</nav>
+					</div>
+
+					<div className="lg:w-1/4 md:w-1/2 w-full px-4">
+						<h2 className="title-font font-semibold text-primary tracking-widest text-sm mb-6">NEWSLETTER</h2>
+						<div className="space-y-4">
+							<Input
+								type="email"
+								placeholder="Votre adresse email"
+								className="w-full bg-opacity-50 rounded-sm border focus:bg-transparent shadow-sm
+                                         focus:ring-2 focus:ring-primary focus:border-primary text-base outline-none
+                                         py-2 px-3 leading-8 transition-colors duration-200 ease-in-out"
+							/>
+							<Button className="w-full rounded-sm">
+								{"S'abonner"}
+							</Button>
+							<p className="text-muted-foreground text-sm">
+								Restez informé de nos dernières actualités.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
+
+			<div className="border-t border-border/10"></div>
+
 			<div className="bg-secondary/50 dark:bg-black/50">
-				<div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-					<p className="text-muted-foreground text-sm text-center sm:text-left">
-						© 2024 Merute Digital Orbital —
+				<div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row justify-between items-center">
+					<p className="text-muted-foreground text-sm">
+						© 2024 Merute Digital —
 						<a
-							href="https://twitter.com/merutedigital"
+							href="https://merute.digital"
 							rel="noopener noreferrer"
-							className="text-primary ml-1"
+							className="text-primary ml-1 hover:text-primary/80"
 							target="_blank"
 						>
-							@merutedigital
+							merute.digital
 						</a>
 					</p>
-					<span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-            <a className="text-muted-foreground hover:text-primary">
-              <Facebook size={20}/>
-            </a>
-            <a className="ml-3 text-muted-foreground hover:text-primary">
-              <Twitter size={20}/>
-            </a>
-            <a className="ml-3 text-muted-foreground hover:text-primary">
-              <Instagram size={20}/>
-            </a>
-            <a className="ml-3 text-muted-foreground hover:text-primary">
-              <Linkedin size={20}/>
-            </a>
-          </span>
+					<div className="flex space-x-4 mt-4 sm:mt-0">
+						<a href="https://facebook.com/merutedigital"
+						   target="_blank"
+						   rel="noopener noreferrer"
+						   className="text-muted-foreground hover:text-primary transition-colors duration-200">
+							<Facebook size={20}/>
+						</a>
+						<a href="https://instagram.com/merutedigital"
+						   target="_blank"
+						   rel="noopener noreferrer"
+						   className="text-muted-foreground hover:text-primary transition-colors duration-200">
+							<Instagram size={20}/>
+						</a>
+						<a href="https://linkedin.com/company/merutedigital"
+						   target="_blank"
+						   rel="noopener noreferrer"
+						   className="text-muted-foreground hover:text-primary transition-colors duration-200">
+							<Linkedin size={20}/>
+						</a>
+					</div>
 				</div>
 			</div>
 		</footer>

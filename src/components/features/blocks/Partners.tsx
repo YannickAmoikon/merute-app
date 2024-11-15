@@ -59,7 +59,7 @@ export default function Partners() {
                                     {partners.map((partner, index) => (
                                         <div
                                             key={`${groupIndex}-${index}`}
-                                            className="relative p-6 bg-secondary dark:bg-black/50 shadow-sm border-2 border-border/50 rounded-md flex-shrink-0"
+                                            className="relative p-6 bg-secondary cursor-pointer dark:bg-black/50 shadow-sm border-2 border-border/50 rounded-md flex-shrink-0"
                                             style={{ width: '220px' }}
                                         >
                                             <div className="flex flex-col items-center justify-center h-[140px]">
